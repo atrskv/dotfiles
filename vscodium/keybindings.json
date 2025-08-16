@@ -1,0 +1,300 @@
+[  
+    // RUN   
+    {
+        "key": "ctrl+r",
+        "command": "python.execInTerminal"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "python.execSelectionInTerminal"
+    },
+
+    // DEBUGGER 
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.debug.start"
+    }, 
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.debug.stop",
+        "when": "inDebugMode"
+
+    },
+    {
+        "key": "ctrl+b",
+        "command": "editor.debug.action.toggleBreakpoint"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.debug.stepOver",
+        "when": "inDebugMode && !terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.debug.stepInto",
+        "when": "inDebugMode && !terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.debug.stepOut",
+        "when": "inDebugMode && !terminalFocus"
+    },
+
+    // EDITOR
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "editor.action.showHover",
+    }, 
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.rename"
+    },
+    {
+        "key": "ctrl+shift+b", // 'beautify'
+        "command": "editor.action.formatDocument"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "editor.action.commentLine"
+    },
+
+    {
+        "key": "ctrl+shift+z z", // 'zip -> zip'
+        "command": "editor.fold"
+    },
+    {
+        "key": "ctrl+shift+z o", // 'zip -> open'
+        "command": "editor.unfold",
+    },
+    {
+        "key": "ctrl+shift+z a", // 'zip -> zip all'
+        "command": "editor.foldAll"
+    }, 
+    {
+        "key": "ctrl+shift+z u", // 'zip -> unzip all'
+        "command": "editor.unfoldAll"
+    },
+
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.save"
+    },
+
+    // TABS
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+
+    {
+        "key": "ctrl+1",
+        "command": "workbench.action.openEditorAtIndex1"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "workbench.action.openEditorAtIndex2"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "workbench.action.openEditorAtIndex3"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "workbench.action.openEditorAtIndex4"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "workbench.action.openEditorAtIndex5"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "workbench.action.openEditorAtIndex6"
+    },
+    {
+        "key": "ctrl+7",
+        "command": "workbench.action.openEditorAtIndex7"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "workbench.action.openEditorAtIndex8"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "workbench.action.openEditorAtIndex9"
+    },
+  
+    {
+        "key": "ctrl+shift+.",
+        "command": "workbench.action.splitEditorRight",
+        "when": "editorFocus"
+
+    },
+    {
+        "key": "ctrl+shift+,",
+        "command": "workbench.action.splitEditorLeft",
+        "when": "editorFocus"
+    }, 
+  
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus && !inDebugMode"
+
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorFocus"
+
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorFocus"
+    },
+
+ 
+
+    // EXPLORER
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "!sideBarVisible"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "sideBarVisible && !filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && filesExplorerFocus"
+    },
+
+    {
+        "key": "ctrl+n",        
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },  
+    {
+        "command": "deleteFile",
+        "key": "ctrl+shift+d",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "renameFile",
+        "key": "ctrl+shift+r",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+  
+    // FINDER
+    {
+        "key": "ctrl+f",
+        "command": "actions.find"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.findInFiles"
+    },
+
+    // TERMINAL
+    {
+        "key": "ctrl+shift+m",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.togglePanel",
+        "when": "!panelVisible"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.focus",
+        "when": "panelVisible && !terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.togglePanel",
+        "when": "panelVisible && terminalFocus"
+    },
+
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+
+    }, 
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+
+    },
+
+
+    // ZEN 
+    {
+        "key": "ctrl+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+
+    // TESTING
+    {
+        "key": "ctrl+t",
+        "command": "workbench.view.testing.focus"
+    },
+
+    // VIM
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+]

@@ -1,0 +1,144 @@
+{
+    // THEME
+    "workbench.colorTheme": "Alabaster",
+
+    // CUSTOMIZATION
+    "highlight.regexFlags": "gim",
+    "highlight.regexes": {
+        "(\"\"\"[\\s\\S]*?\"\"\"|'''[\\s\\S]*?'''|\"[^\"]*\"|'[^']*')": {
+            "filterLanguageRegex": "python",
+            "decorations": [
+                {
+                    "backgroundColor": "#E5FAD7"
+                }
+            ]
+        },
+        "(?<!['\"])(#.*$)": {
+            "filterLanguageRegex": "python",
+            "decorations": [
+                {
+                    "backgroundColor": "#FFF9C4"
+                }
+            ]
+        },
+        "(?<=\\bdef\\s)([A-Za-z_]\\w*)": {
+            "filterLanguageRegex": "python",
+            "decorations": [
+                {
+                    "backgroundColor": "#DBF1FF"
+                }
+            ]
+        }
+    },
+
+    // EDITOR
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 1.2,
+    "editor.fontLigatures": true,
+    "editor.lineNumbers": "relative",
+    "editor.multiCursorModifier": "alt",
+    "editor.tabSize": 4,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.renderLineHighlight": "none",
+    "editor.renderWhitespace": "none",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "editor.inlineSuggest.enabled": true,
+    "editor.suggest.showWords": true,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.hideCursorInOverviewRuler": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.formatOnSave": true,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
+
+    "workbench.startupEditor": "none",
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.tree.enableStickyScroll": false,
+    "workbench.tips.enabled": false,
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light",
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "multiple",
+    "workbench.layoutControl.enabled": false,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.sideBar.location": "right",
+    "workbench.editor.empty.hint": "hidden",
+
+    "explorer.confirmDragAndDrop": true,
+    "explorer.confirmDelete": true,
+
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.enableVisualBell": true,
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.sendKeybindingsToShell": true,
+
+    "files.autoSave": "afterDelay",
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.mypy_cache": true,
+        "**/.ruff_cache": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.vscode": true
+    },
+
+    "breadcrumbs.enabled": false,
+
+    "zenMode.hideLineNumbers": false,
+    "zenMode.showTabs": "none",
+    "zenMode.fullScreen": true,
+    "zenMode.centerLayout": false,
+
+    "window.customTitleBarVisibility": "auto",
+
+    // OTHER
+    "git.openRepositoryInParentFolders": "always",
+    "extensions.ignoreRecommendations": true,
+    "vim.cursorStylePerMode.insert": "line",
+
+    "continue.enableConsole": true,
+    "continue.telemetryEnabled": false,
+    "continue.enableTabAutocomplete": true,
+
+    "telemetry.telemetryLevel": "off",
+
+    "pythonFuncRunner.pythonPath": "${workspaceFolder}.venv/bin/python3",
+    "pythonFuncRunner.extraPytestArgs": "-rpP",
+
+    "vim.useCtrlKeys": false,
+
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+    },
+
+    "ruff.importStrategy": "fromEnvironment",
+    "ruff.lint.enable": true,
+    "ruff.organizeImports": true,
+    "ruff.lint.preview": true,
+    
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
+}
