@@ -42,7 +42,7 @@
 
     // EDITOR
     {
-        "key": "ctrl+shift+e",
+        "key": "ctrl+shift+w",
         "command": "workbench.action.focusActiveEditorGroup"
     },
     {
@@ -64,6 +64,15 @@
     {
         "key": "ctrl+/",
         "command": "editor.action.commentLine"
+    },
+
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.navigateForward"
     },
 
     {
@@ -136,13 +145,13 @@
     },
   
     {
-        "key": "ctrl+shift+.",
+        "key": "ctrl+shift+]",
         "command": "workbench.action.splitEditorRight",
         "when": "editorFocus"
 
     },
     {
-        "key": "ctrl+shift+,",
+        "key": "ctrl+shift+[",
         "command": "workbench.action.splitEditorLeft",
         "when": "editorFocus"
     }, 
@@ -165,21 +174,19 @@
         "when": "editorFocus"
     },
 
- 
-
     // EXPLORER
     {
-        "key": "ctrl+e",
+        "key": "ctrl+shift+e",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "!sideBarVisible"
     },
     {
-        "key": "ctrl+e",
+        "key": "ctrl+shift+e",
         "command": "workbench.files.action.focusFilesExplorer",
         "when": "sideBarVisible && !filesExplorerFocus"
     },
     {
-        "key": "ctrl+e",
+        "key": "ctrl+shift+e",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "sideBarVisible && filesExplorerFocus"
     },
@@ -203,6 +210,21 @@
         "command": "renameFile",
         "key": "ctrl+shift+r",
         "when": "filesExplorerFocus && !inputFocus"
+    },
+
+    {
+        "key": "ctrl+p",
+        "command": "copyFilePath",
+    },
+    {
+        "key": "ctrl+shift+p",
+        "command": "copyRelativeFilePath",
+    },
+
+    {
+        "key": "ctrl+shift+z",
+        "command": "workbench.files.action.collapseExplorerFolders",
+         "when": "sideBarVisible && filesExplorerFocus"
     },
   
     // FINDER
@@ -260,7 +282,7 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+shift+.",
+        "key": "ctrl+shift+]",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
 
@@ -275,7 +297,6 @@
         "key": "ctrl+shift+h",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
-
     },
 
 
