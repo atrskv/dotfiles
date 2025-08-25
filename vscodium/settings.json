@@ -119,7 +119,7 @@
 
     "telemetry.telemetryLevel": "off",
 
-    "pythonFuncRunner.pythonPath": "${workspaceFolder}.venv/bin/python3",
+    "pythonFuncRunner.pythonPath": ".venv/bin/python3",
     "pythonFuncRunner.extraPytestArgs": "-rpP",
 
     "vim.useCtrlKeys": false,
