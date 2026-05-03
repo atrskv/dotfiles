@@ -9,8 +9,6 @@ font-style-bold = "Medium"
 
 cursor-style = bar
 
-bell = false
-
 macos-option-as-alt = left
 
 window-padding-x = 0

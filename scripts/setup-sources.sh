@@ -4,32 +4,30 @@ set -euo pipefail
 
 SOURCES="/etc/apt/sources.list"
 
-echo "→ Writing $SOURCES …"
+echo "Writing $SOURCES"
 
-sudo tee "$SOURCES" > /dev/null <<'EOF'
+sudo tee "$SOURCES" >/dev/null <<'EOF'
 
-# Main mirror
-deb https://mirror.yandex.ru/debian/ trixie contrib main non-free non-free-firmware
-# deb-src https://mirror.yandex.ru/debian/ trixie contrib main non-free non-free-firmware
+# Main
+# deb https://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
+deb https://mirror.yandex.ru/debian/ trixie main contrib non-free non-free-firmware
 
 # Updates
-deb https://mirror.yandex.ru/debian/ trixie-updates contrib main non-free non-free-firmware
-# deb-src https://mirror.yandex.ru/debian/ trixie-updates contrib main non-free non-free-firmware
+# deb https://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
+deb https://mirror.yandex.ru/debian/ trixie-updates main contrib non-free non-free-firmware
 
-# Proposed updates
-deb https://mirror.yandex.ru/debian/ trixie-proposed-updates contrib main non-free non-free-firmware
-# deb-src https://mirror.yandex.ru/debian/ trixie-proposed-updates contrib main non-free non-free-firmware
-
-# Backports
-deb https://mirror.yandex.ru/debian/ trixie-backports contrib main non-free non-free-firmware
-# deb-src https://mirror.yandex.ru/debian/ trixie-backports contrib main non-free non-free-firmware
+# Backports (apt install -t trixie-backports <>)
+# deb https://deb.debian.org/debian/ trixie-backports main contrib non-free non-free-firmware
+deb https://mirror.yandex.ru/debian/ trixie-backports main contrib non-free non-free-firmware
 
 # Security
-deb https://security.debian.org/debian-security/ trixie-security contrib main non-free non-free-firmware
-# deb-src https://security.debian.org/debian-security/ trixie-security contrib main non-free non-free-firmware
+# deb https://security.debian.org/debian-security/ trixie-security main contrib non-free non-free-firmware
+deb https://mirror.yandex.ru/debian-security/ trixie-security main contrib non-free non-free-firmware
 EOF
 
 echo "sources.list updated"
-echo "Running apt update …"
+echo "Running apt update"
+
 sudo apt-get update
+
 echo "Done"
