@@ -1,0 +1,146 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 0,
+
+    "margin-top": 13,
+    "margin-bottom": 0,
+    "margin-left": 13,
+    "margin-right": 13,
+
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["temperature", "memory", "cpu"],
+    "modules-right": ["battery", "backlight", "pulseaudio", "custom/xkeyboard", "clock", "network", "custom/powermenu"],
+
+    "custom/uptime": {
+        "format": "{}",
+        "format-icon": [""],
+        "tooltip": false,
+        "interval": 1600,
+        "exec": "$HOME/.config/waybar/scripts/uptime.sh"
+    },
+
+    "custom/filesystem": {
+        "format": "",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-focused": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+"focused": "<span foreground='#b4befe'>󰣚</span>",
+            "urgent": "!"
+        },
+        "persistent_workspaces": {
+            "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
+            "6": "6", "7": "7", "8": "8", "9": "9"
+        },
+        "sort-by": "number",
+        "on-click": "move to workspace",
+        "on-scroll-up": "swaymsg workspace prev_on_output",
+        "on-scroll-down": "swaymsg workspace next_on_output"
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "critical-threshold": 70,
+        "format": "{icon}\u2009<span foreground='#cdd6f4'>{temperatureC}°C</span>",
+        "format-icons": ["", "", "", ""]
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": " <span foreground='#cdd6f4'>{used}G</span>",
+        "tooltip": true,
+        "tooltip-format": "{used}GB / {total}GB"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": " <span foreground='#cdd6f4'>{usage}%</span>",
+        "tooltip": true,
+        "tooltip-format": "Load: {load_avg1}\nUsage: {usage}%"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} <span foreground='#cdd6f4'>{volume}%</span>",
+        "format-muted": "󰖁",
+        "on-click": "pavucontrol",
+        "scroll-step": 5,
+        "max-volume": 100,
+        "format-icons": {
+            "headphones": "",
+            "default": ["", "", "\u2009"]
+        }
+    },
+
+    "clock": {
+        "timezone": "Europe/Moscow",
+        "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "<span foreground='#cdd6f4'>{:%d %B, %H:%M}</span>",
+        "format-alt": "<span foreground='#cdd6f4'>{:%a, %d %b %Y}</span>"
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ACAD",
+        "full-at": 98,
+        "low-threshold": 10,
+        "interval": 5,
+        "format": "{icon} <span foreground='#cdd6f4'>{capacity}%</span>",
+        "format-charging": " <span foreground='#cdd6f4'>{capacity}%</span>",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    "backlight": {
+        "device": "amdgpu_bl2",
+        "format": "{icon} <span foreground='#cdd6f4'>{percent}%</span>",
+        "format-icons": ["", ""],
+        "on-scroll-up": "brightnessctl s +5%",
+        "on-scroll-down": "brightnessctl s 5%-",
+        "tooltip": false
+    },
+
+    "network": {
+        "interface": "wlp3s0",
+        "format-wifi": " ",
+        "format-disconnected": "<span foreground='#f38ba8'>󰖪</span>",
+        "tooltip": false,
+        "on-click": "ghostty -e nmtui"
+    },
+
+    "custom/xkeyboard": {
+        "exec": "swaymsg -t get_inputs | jq -r '.[] | select(.type==\"keyboard\") | .xkb_active_layout_name | .[0:2] | ascii_downcase' | head -n1",
+        "interval": 1,
+        "format": "{}",
+        "on-click": "swaymsg input * xkb_switch_layout next",
+        "tooltip": false
+    },
+
+    "custom/powermenu": {
+        "format": " ",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6,
+        "show-passive-items": true
+    }
+}
