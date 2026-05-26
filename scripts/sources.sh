@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -e
 
-SOURCES="/etc/apt/sources.list"
+echo "Backing up old sources.list..."
 
-echo "Writing $SOURCES"
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
 
-sudo tee "$SOURCES" >/dev/null <<'EOF'
+echo "Setting Debian mirrors..."
 
+sudo tee /etc/apt/sources.list >/dev/null <<'EOF'
 # Main
 # deb https://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
 deb https://mirror.yandex.ru/debian/ trixie main contrib non-free non-free-firmware
@@ -16,7 +17,8 @@ deb https://mirror.yandex.ru/debian/ trixie main contrib non-free non-free-firmw
 # deb https://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
 deb https://mirror.yandex.ru/debian/ trixie-updates main contrib non-free non-free-firmware
 
-# Backports (apt install -t trixie-backports <>)
+# Backports
+# apt install -t trixie-backports <package>
 # deb https://deb.debian.org/debian/ trixie-backports main contrib non-free non-free-firmware
 deb https://mirror.yandex.ru/debian/ trixie-backports main contrib non-free non-free-firmware
 
@@ -25,9 +27,8 @@ deb https://mirror.yandex.ru/debian/ trixie-backports main contrib non-free non-
 deb https://mirror.yandex.ru/debian-security/ trixie-security main contrib non-free non-free-firmware
 EOF
 
-echo "sources.list updated"
-echo "Running apt update"
+sudo apt update
 
-sudo apt-get update
+echo "Upgrading system..."
 
-echo "Done"
+sudo apt upgrade -y
