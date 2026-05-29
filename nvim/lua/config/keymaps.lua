@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "оо", "<Esc>", { desc = "Exit insert mode (ru)" })
+
 map("n", "<leader>cR", "<cmd>RunCode<cr>", { desc = "Run code" })
 
 -- Opencode
