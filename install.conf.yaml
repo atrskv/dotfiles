@@ -1,0 +1,50 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean:
+    ~/.config:
+    ~/.local/bin:
+
+- create:
+    - ~/.config
+    - ~/.local/bin
+    - ~/.oh-my-zsh/custom/themes
+    - ~/.config/waybar/scripts
+    - ~/.config/wofi
+    - ~/.config/sway/config.d
+    - ~/.config/waypaper
+    - ~/.config/wofi
+
+- link:
+    ~/.zshrc: zsh/.zshrc
+    ~/.oh-my-zsh/custom/themes/my-theme.zsh-theme: zsh/themes/my-theme.zsh-theme
+
+    ~/.config/tmux/tmux.conf: tmux/.config/tmux.conf
+
+    ~/.config/ghostty/config.ghostty: ghostty/.config/config.ghostty
+
+    ~/.config/nvim: nvim
+
+    ~/.obsidian.vimrc: obsidian/.obsidian.vimrc
+
+    ~/.config/sway/config: sway/config
+    ~/.config/sway/config.d/monitors.config: sway/config.d/monitors.config.example
+
+    ~/.config/waybar/style.css: waybar/style.css
+    ~/.config/waybar/config.jsonc: waybar/config.jsonc
+    ~/.config/waybar/scripts/cputemp.sh: scripts/cputemp.sh
+
+    ~/.config/wofi/config: wofi/config
+    ~/.config/wofi/powermenu.css: wofi/powermenu.css
+    ~/.config/wofi/style.css: wofi/style.css
+
+    ~/.config/waypaper/config.ini: waypaper/config.ini
+    ~/.config/waypaper/bgs: waypaper/bgs
+
+    ~/.local/bin/ufetch: ufetch/ufetch
+
+- shell:
+    - [chmod +x scripts/cputemp.sh, Make cputemp executable]
+    - [chmod +x ufetch/ufetch, Make ufetch executable]
