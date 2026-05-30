@@ -7,11 +7,11 @@ function virtualenv_info {
 }
 
 PROMPT='
-%n at %m in %{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)
+%n at %m in %F{#b4befe}%~%f$(git_prompt_info)
 $(virtualenv_info)$(prompt_char) '
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[yellow]%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[yellow]%}?"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %f"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%f"
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{#f9e2af}!%f"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{#f9e2af}?%f"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
