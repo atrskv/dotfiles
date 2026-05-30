@@ -1,0 +1,5 @@
+- shell:
+    - command: bash scripts/ghostty.sh
+      description: Install Ghostty terminal
+      stdout: true
+      stderr: true
