@@ -1,0 +1,25 @@
+- apt:
+    - ca-certificates
+    - curl
+    - wget
+    - git
+    - gpg
+    - gnupg
+    - lsb-release
+    - apt-transport-https
+
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal
+    - xdg-desktop-portal-wlr
+    - grim
+    - slurp
+    - ripgrep
+    - wl-clipboard
+    - wlogout
+    - network-manager
+    - brightnessctl
+    - pulseaudio-utils
+    - lazygit
+    - cava
+    - flatpak
+    - pipx

@@ -1,0 +1,20 @@
+- shell:
+    - command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      description: Add Flathub remote
+      stdout: true
+      stderr: true
+
+    - command: flatpak install -y flathub be.alexandervanhee.gradia
+      description: Install Gradia
+      stdout: true
+      stderr: true
+
+    - command: flatpak install -y flathub org.telegram.desktop
+      description: Install Telegram
+      stdout: true
+      stderr: true
+
+    - command: flatpak install -y flathub md.obsidian.Obsidian
+      description: Install Obsidian
+      stdout: true
+      stderr: true

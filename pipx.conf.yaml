@@ -1,0 +1,10 @@
+- shell:
+    - command: pipx ensurepath
+      description: Ensure pipx path
+      stdout: true
+      stderr: true
+
+    - command: pipx install git+https://github.com/rmaake1/terminal-rain-lightning.git || true
+      description: Install terminal rain
+      stdout: true
+      stderr: true
