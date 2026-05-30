@@ -1,0 +1,5 @@
+- shell:
+    - command: bash scripts/fonts-and-icons.sh
+      description: Install user fonts (and icons)
+      stdout: true
+      stderr: true
