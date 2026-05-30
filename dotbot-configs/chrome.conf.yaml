@@ -1,0 +1,5 @@
+- shell:
+    - command: bash scripts/chrome.sh
+      description: Install Google Chrome
+      stdout: true
+      stderr: true
