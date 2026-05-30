@@ -1,0 +1,5 @@
+- shell:
+    - command: bash scripts/sources.sh
+      description: Configure apt sources
+      stdout: true
+      stderr: true
