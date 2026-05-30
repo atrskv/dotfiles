@@ -2,10 +2,7 @@
 
 set -e
 
-echo "Installing system icons and fonts..."
-
-sudo apt update
-sudo apt install -y fonts-material-design-icons-iconfont
+echo "Installing fonts..."
 
 FONTPATH="$HOME/.local/share/fonts"
 mkdir -p "$FONTPATH"
@@ -22,7 +19,7 @@ unzip -o JetBrainsMono.zip -d "$FONTPATH"
 
 rm -f JetBrainsMono.zip
 
-echo "🔄 Updating font cache..."
+echo "Updating font cache..."
 fc-cache -fv
 
-echo "Done"
+echo "Done!"
