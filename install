@@ -1,15 +1,64 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-set -e
-
-CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
-
 DOTBOT_BIN="bin/dotbot"
+
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTBOT="${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}"
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+cd "$BASEDIR"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+git -C "$DOTBOT_DIR" submodule sync --quiet --recursive
+git submodule update --init --recursive "$DOTBOT_DIR"
+
+echo "Starting install..."
+
+echo
+echo "1. Configure apt sources..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/system.conf.yaml
+
+echo
+echo "2. Install apt packages..."
+sudo "$DOTBOT" -d "$BASEDIR" -p dotbot-apt/apt.py -c dotbot-configs/packages.conf.yaml
+
+echo
+echo "3. Install pipx packages..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/pipx.conf.yaml
+
+echo
+echo "4. Install Flatpak apps..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/flatpak.conf.yaml
+
+echo
+echo "5. Install fonts..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/fonts.conf.yaml
+
+echo
+echo "6. Setup Zsh..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/zsh.conf.yaml
+
+echo
+echo "7. Setup TPM..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/tpm.conf.yaml
+
+echo
+echo "8. Install Neovim..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/nvim.conf.yaml
+
+echo
+echo "9. Install Ghostty..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/ghostty.conf.yaml
+
+echo
+echo "10. Install Chrome..."
+"$DOTBOT" -d "$BASEDIR" -c dotbot-configs/chrome.conf.yaml
+
+echo
+echo "11. Apply dotfiles symlinks..."
+"$DOTBOT" -d "$BASEDIR" -c install.conf.yaml
+
+echo
+echo "Done!"
+echo "Log out and log in again if your shell was changed"
+echo "Inside tmux, press prefix + I to install tmux plugins"
