@@ -22,4 +22,5 @@
     - lazygit
     - cava
     - flatpak
-    - pipx
+    - zsh
+    - fonts-material-design-icons-iconfont
