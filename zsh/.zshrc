@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="my-theme"
 DISABLE_AUTO_TITLE="true"
-plugins=(git zsh-autosuggestions web-search)
+plugins=(git zsh-autosuggestions web-search zsh-syntax-highlighting)
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/nvim/bin"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland

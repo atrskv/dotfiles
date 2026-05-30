@@ -1,0 +1,5 @@
+- shell:
+    - command: bash scripts/zsh.sh
+      description: Setup zsh
+      stdout: true
+      stderr: true
