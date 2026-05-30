@@ -1,0 +1,5 @@
+- shell:
+    - command: bash scripts/nvim.sh
+      description: Install Neovim
+      stdout: true
+      stderr: true
