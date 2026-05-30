@@ -1,0 +1,5 @@
+- shell:
+    - command: bash scripts/tpm.sh
+      description: Setup TPM
+      stdout: true
+      stderr: true
