@@ -31,7 +31,7 @@ fi
 
 if [ "$SHELL" != "$(command -v zsh)" ]; then
   echo "Changing default shell to zsh..."
-  chsh -s "$(command -v zsh)"
+  sudo chsh -s "$(command -v zsh)"
 else
   echo "Default shell is already zsh"
 fi
