@@ -1,5 +1,5 @@
 
-I wanted a Debian setup that is simple, stable and nice to look at. If you are looking for something similar, maybe you will find something useful here
+I wanted a Debian setup that is simple and nice to look at. If you are looking for something similar, maybe you will find something useful here
 
 | ⚠️ Attention |
 |-------------|
@@ -19,7 +19,7 @@ I wanted a Debian setup that is simple, stable and nice to look at. If you are l
 ## Installation on a fresh Debian 13
 
 ```bash
-git clone --recurse-submodules git@github.com:atrskv/dotfiles.git ~/projects/main/dotfiles
+git clone --recurse-submodules https://github.com/atrskv/dotfiles.git ~/projects/main/dotfiles
 cd ~/projects/main/dotfiles
 chmod +x install
 ./install
