@@ -3,7 +3,7 @@ ZSH_THEME="my-theme"
 DISABLE_AUTO_TITLE="true"
 plugins=(git zsh-autosuggestions web-search zsh-syntax-highlighting)
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/nvim/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/nvim/bin:/usr/local/go/bin"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export LSCOLORS="Cxfxcxdxbxegedabagacad"
 
@@ -14,3 +14,7 @@ alias vim='nvim'
 alias v='nvim'
 
 source $ZSH/oh-my-zsh.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
