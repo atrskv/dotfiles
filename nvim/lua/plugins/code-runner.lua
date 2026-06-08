@@ -2,10 +2,10 @@ return {
   {
     "CRAG666/code_runner.nvim",
     opts = {
-      mode = "float",
+      mode = "term",
       filetype = {
-        python = "python3 -u",
-        typescript = "node run",
+        python = "python3 -u '$file' ; read",
+        typescript = "node '$file' ; read",
       },
     },
   },
