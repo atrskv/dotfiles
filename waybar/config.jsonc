@@ -93,9 +93,10 @@
   },
   "clock": {
     "timezone": "Europe/Moscow",
-    "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "<span foreground='#cdd6f4'>{:%d %B, %H:%M}</span>",
-    "format-alt": "<span foreground='#cdd6f4'>{:%a, %d %b %Y}</span>"
+    "locale": "ru_RU.UTF-8",
+    "tooltip-format": "<big>{:L%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "<span foreground='#cdd6f4'>{:L%d %B (%m), %A %H:%M}</span>",
+    "format-alt": "<span foreground='#cdd6f4'>{:L%a, %d %b %Y}</span>"
   },
   // Relevant for laptops
   "battery": {
@@ -135,7 +136,7 @@
     "on-click": "ghostty -e nmtui"
   },
   "custom/xkeyboard": {
-    "exec": "swaymsg -t get_inputs | jq -r '.[] | select(.type==\"keyboard\") | .xkb_active_layout_name | .[0:2] | ascii_downcase' | head -n1",
+    "exec": "swaymsg -t get_inputs | jq -r '.[] | select(.type==\"keyboard\") | .xkb_active_layout_name | if startswith(\"Russian\") then \"ру\" else \"en\" end' | head -n1",
     "interval": 1,
     "format": "{}",
     "on-click": "swaymsg input * xkb_switch_layout next",
